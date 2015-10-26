@@ -1,6 +1,6 @@
-var mongoose = require(mongoose-q)
-(require('mongoose'),{spread:true});
-
+// var mongoose = require(mongoose-q)
+// (require('mongoose'),{spread:true});
+var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Car = new Schema({

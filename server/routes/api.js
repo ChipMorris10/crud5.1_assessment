@@ -1,5 +1,5 @@
 var express = require('express');
-var router = require.Router();
+var router = express.Router();
 var Car = require('../models/car.js');
 
 
@@ -14,35 +14,42 @@ router.post('/cars', function (req, res, next) {
   })
   .saveQ()
     .then(function(result){res.json(result)})
-    .catch(function(err){res.send(err)})
+    .fail(function(err){res.send(err)})
     .done();
 });
 
 // GET ONE Car
-router.get('/car/:id', function(req, res, next) {
-  Car.findByIdQ(req.params.id)
-    .then(function(result){res.json(result)})
-    .catch(function(err){res.send(err)})
-    .done();
-});
+// router.get('/car/:id', function(req, res, next) {
+//   Car.findByIdQ(req.params.id)
+//     .then(function(result){res.json(result)})
+//     .catch(function(err){res.send(err)})
+//     .done();
+// });
 
 // GET ALL Cars
-router.get('/cars', function(req, res, next) {
-  Cars.findQ()
-    .then(function(result))
-})
+// router.get('/cars', function(req, res, next) {
+//   Cars.findQ()
+//     .then(function(result){res.json(result)})
+//     .catch(function(err){res.send(err)})
+//     .done();
+// });
 
 // PUT ONE Car
+// router.put('/car/:id', function (req, res, next) {
+//   Car.findByIdAndUpdateQ(req.params.id, req.body)
+//     .then(function(result){res.json(result)})
+//     .catch(function(err){res.send(err)})
+//     .done();
+// });
 
 
 // DELETE ONE Car
-
-
-
-
-
-
-
+// router.delete('/car/:id', function (req, res, next) {
+//   Car.findByIdAndRemoveQ(req.params.id)
+//     .then(function(result){res.json(result)})
+//     .catch(function(err){res.send(err)})
+//     .done();
+// });
 
 
 
