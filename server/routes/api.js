@@ -20,12 +20,12 @@ router.post('/cars', function (req, res, next) {
 });
 
 // GET ONE Car
-router.get('/car/:id', function(req, res, next) {
-  Car.findByQ(req.params.id)
-    .then(function(result){res.json(result)})
-    .catch(function(err){res.send(err)})
-    .done();
-});
+// router.get('/car/:id', function(req, res, next) {
+//   Car.findByQ(req.params.id)
+//     .then(function(result){res.json(result)})
+//     .catch(function(err){res.send(err)})
+//     .done();
+// });
 
 // GET ALL Cars
 // router.get('/cars', function(req, res, next) {
@@ -36,12 +36,12 @@ router.get('/car/:id', function(req, res, next) {
 // });
 
 // PUT ONE Car
-// router.put('/car/:id', function (req, res, next) {
-//   Car.findByIdAndUpdateQ(req.params.id, req.body)
-//     .then(function(result){res.json(result)})
-//     .fail(function(err){res.send(err)})
-//     .done();
-// });
+router.put('/car/:id', function (req, res, next) {
+  Car.findByIdAndUpdateQ(req.params.id, req.body)
+    .then(function(result){res.json(result)})
+    .fail(function(err){res.send(err)})
+    .done();
+});
 
 
 // DELETE ONE Car
