@@ -20,20 +20,20 @@ router.post('/cars', function (req, res, next) {
 });
 
 // GET ONE Car
-// router.get('/car/:id', function(req, res, next) {
-//   Car.findByQ(req.params.id)
-//     .then(function(result){res.json(result)})
-//     .catch(function(err){res.send(err)})
-//     .done();
-// });
+router.get('/car/:id', function(req, res, next) {
+  Car.findByIdQ(req.params.id)
+    .then(function(result){res.json(result)})
+    .catch(function(err){res.send(err)})
+    .done();
+});
 
 // GET ALL Cars
-// router.get('/cars', function(req, res, next) {
-//   Cars.findQ()
-//     .then(function(result){res.json(result)})
-//     .fail(function(err){res.send(err)})
-//     .done();
-// });
+router.get('/cars', function(req, res, next) {
+  Cars.findQ()
+    .then(function(result){res.json(result)})
+    .fail(function(err){res.send(err)})
+    .done();
+});
 
 // PUT ONE Car
 router.put('/car/:id', function (req, res, next) {
