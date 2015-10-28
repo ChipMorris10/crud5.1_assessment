@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Car = require('../models/car.js');
+var mongoose = require('mongoose-q')(require('mongoose'),{spread:true});
 
 
 // POST ONE Car
