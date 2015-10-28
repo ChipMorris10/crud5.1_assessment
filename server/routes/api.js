@@ -29,7 +29,7 @@ router.get('/car/:id', function(req, res, next) {
 
 // GET ALL Cars
 router.get('/cars', function(req, res, next) {
-  Cars.findQ()
+  Car.findQ()
     .then(function(result){res.json(result)})
     .fail(function(err){res.send(err)})
     .done();
